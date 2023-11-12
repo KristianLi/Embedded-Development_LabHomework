@@ -174,14 +174,16 @@ void test2(void) {
 	uint8_t lightKey4First = 0;
 	uint8_t lightKey4Second = 0;
 	gd_eval_key_state_get(USER1_KEY)==RESET?lightKey1First=1:lightKey1First=0;
-    if(lightKey1First==1)lightLEDImmediately();
-	gd_eval_key_state_get(USER4_KEY)==RESET?lightKey4First=1:lightKey4First=0;
-    if(lightKey4First==1)flashLED();
-    while(gd_eval_key_state_get(USER4_KEY)==RESET){
+    if(lightKey1First==1){
+        lightLEDImmediately();
+	    gd_eval_key_state_get(USER4_KEY)==RESET?lightKey4First=1:lightKey4First=0;
+        if(lightKey4First==1)flashLED();
+        while(gd_eval_key_state_get(USER4_KEY)==RESET){
         delay_1ms(1);
+        }
+        gd_eval_key_state_get(USER1_KEY)==RESET?lightKey1Second=1:lightKey1Second=0;
+        if(lightKey1Second==1)extinguishLEDImmediately();
     }
-    gd_eval_key_state_get(USER1_KEY)==RESET?lightKey1Second=1:lightKey1Second=0;
-    if(lightKey1Second==1)extinguishLEDImmediately();
 	
 #endif
 }
