@@ -1,6 +1,5 @@
 #include "test.h"
 #include "user.h"
-
 char machinenum[] = "001";//在这填写设备号
 char exph[] = "110B";//在这填写自定演示符号
 
@@ -19,9 +18,9 @@ int main(void) {
 
 	while(1){
 
-		test1();
+//		test1();
 
-//		test2();
+		test2();
 //		test3();
 
   }	
