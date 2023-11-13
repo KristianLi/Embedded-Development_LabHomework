@@ -56,8 +56,6 @@ extern char exph[];
 extern char tab1[];
 extern char ReadE2P[] ;
 extern char Res[]  ;
-extern char Res1[] ; //ĞÂÔö
-extern char Res0[] ;
 
 extern char t1[] ;
 extern char t2[] ;

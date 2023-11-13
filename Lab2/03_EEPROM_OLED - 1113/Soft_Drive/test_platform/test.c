@@ -12,6 +12,12 @@ uint8_t tab[]="2023.11.13+name"; //定义日期和姓名缩写
 const uint8_t BUFFER_SIZE=sizeof(tab)/sizeof(tab[0]);
 uint8_t i2c_buffer_write[BUFFER_SIZE];
 uint8_t i2c_buffer_read[BUFFER_SIZE];
+char machinenum[]="001";//在这填设备号
+char tab1[]="2023.11.13+name";//在这填自定字符串
+char ReadE2P[]="xxxxxx+xxx+xxx";//EEPROM读取缓存区
+char Res[]="x";//实验结果
+char Res1[]="1";
+char Res0[]="0";
 /* 系统初始化 */
 void systemInit(void)
 {
@@ -27,6 +33,7 @@ void systemInit(void)
 
     OLED_Clear(); //清屏
 }
+//对写入EEPROM对数据进行核对
 uint8_t i2c_24c02_test(void)
 {
     uint16_t i;
@@ -62,7 +69,7 @@ void test1(void)
             gd_eval_led_on(LED1);
             OLED_ShowCHinese(0,2,1);//显示对
             Uart0Printf("对 \r\n");
-            Res[0]=Res1[0];  //不知道这是干啥用的 Res1和Res0都没定义 要在user.h自己定义
+            Res[0]=Res1[0]; 
         }
         else
         {
@@ -82,4 +89,5 @@ void test1(void)
 /* 进阶实验	*/
 void test2(void)
 {
+
 }
