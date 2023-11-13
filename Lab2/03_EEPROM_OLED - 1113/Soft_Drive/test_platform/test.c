@@ -78,7 +78,7 @@ void test1(void)
             Uart0Printf("´í \r\n");
             Res[0]=Res0[0];
         }
-        json_student_imformation03(machinenum,tab1,ReadE2P,Res);
+       // json_student_imformation03(machinenum,tab1,ReadE2P,Res);
         while(1)
         {
 
@@ -89,9 +89,32 @@ void test1(void)
 /* ½ø½×ÊµÑé	*/
 void test2(void)
 {
-    OLED_Clear();
+    //char nums[]={"00","01","10","11"};
+    int index=0;
     while(1)
     {
-        OLED_DrawBMP(0,0,127,7,img1);
+        OLED_Clear();
+        index=(index+1)%4;
+        if(index==0)
+        {
+            OLED_DrawBMP(0,0,127,7,BMP1);
+            delay_1ms(3000);
+        }
+        if(index==1)
+        {
+            OLED_DrawBMP(0,0,127,7,BMP2);
+            delay_1ms(3000);
+        }
+        if(index==2)
+        {
+            OLED_DrawBMP(0,0,127,7,img1);
+            delay_1ms(3000);
+        }
+        if(index==3)
+        {
+            OLED_DrawBMP(0,0,127,7,img2);
+            delay_1ms(3000);
+        }
+        
     }
 }
