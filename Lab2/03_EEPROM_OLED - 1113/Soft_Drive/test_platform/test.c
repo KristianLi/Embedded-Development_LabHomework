@@ -89,5 +89,9 @@ void test1(void)
 /* ½ø½×ÊµÑé	*/
 void test2(void)
 {
-
+    OLED_Clear();
+    while(1)
+    {
+        OLED_DrawBMP(0,0,127,7,img1);
+    }
 }
