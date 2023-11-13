@@ -20,16 +20,16 @@ typedef uint16_t u16;
 typedef uint8_t  u8;
 
 /*------------------------------usart2---------------------------------*/
-//#define USART2_MAX_RECV_LEN		1024				//最大接收缓存字节数
-//#define USART2_MAX_SEND_LEN		1024				//最大发送缓存字节数
+//#define USART2_MAX_RECV_LEN		1024				//??????????????
+//#define USART2_MAX_SEND_LEN		1024				//?????????????
 #define USART1_DATA_ADDRESS    ((uint32_t)0x40004404)
-#define USART2_MAX_RECV_LEN		1024				//最大接收缓存字节数
-#define USART2_MAX_SEND_LEN		2048				//最大发送缓存字节数
-#define USART2_RX_EN 			1					//0,不接收;1,接收.
+#define USART2_MAX_RECV_LEN		1024				//??????????????
+#define USART2_MAX_SEND_LEN		2048				//?????????????
+#define USART2_RX_EN 			1					//0,??????;1,????.
 #define ARRAYNUM(arr_name)     (uint32_t)(sizeof(arr_name)/sizeof(*(arr_name)))
 #define USART0_DATA_ADDRESS    ((uint32_t)0x40013804)
-extern u8  USART2_RX_BUF[USART2_MAX_RECV_LEN]; 		//接收缓冲,最大USART2_MAX_RECV_LEN字节
-extern u8  USART2_TX_BUF[USART2_MAX_SEND_LEN]; 		//发送缓冲,最大USART2_MAX_SEND_LEN字节
+extern u8  USART2_RX_BUF[USART2_MAX_RECV_LEN]; 		//???????,???USART2_MAX_RECV_LEN???
+extern u8  USART2_TX_BUF[USART2_MAX_SEND_LEN]; 		//???????,???USART2_MAX_SEND_LEN???
 
 extern u8 USART2_RX_REC_ATCOMMAD;
 
@@ -37,7 +37,7 @@ extern volatile uint8_t motor_speed;
 extern volatile uint8_t mode_select;
 extern float speed;
 
-void USART2_Init(u32 bound);				//串口2初始化 
+void USART2_Init(u32 bound);				//????2????? 
 //void gd_eval_dma_com_init(u32 bound);
 
 void UART_DMA_Enable(uint32_t dma_periph, dma_channel_enum channelx,uint32_t len);
@@ -55,9 +55,11 @@ extern char exph[];
 
 extern char tab1[];
 extern char ReadE2P[] ;
-extern char Res[] ;
+extern char Res[]  ;
+extern char Res1[] ; //新增
+extern char Res0[] ;
 
-extern char t1[];
+extern char t1[] ;
 extern char t2[] ;
 extern char charused[];
 
@@ -80,23 +82,23 @@ extern char somke[];
 extern char speed_str[];
 extern char dir[];
 
-extern char TCP_Server_IP[] ;	//TCP服务器IP
-extern char TCP_Server_COM[];			//TCP服务器端口
+extern char TCP_Server_IP[] ;	//TCP??????IP
+extern char TCP_Server_COM[];			//TCP?????????
 extern struct record fields;
-void json_student_imformation01 (char *machinenum,char *student_name, char *student_number);//学生信息上传
-void json_student_imformation02 (char *machinenum,char *exph);//实验二学生信息上传封装
-void json_student_imformation03 (char *machinenum,char *tab, char *ReadE2P,char *RES);//实验三学生信息上传封装
-void json_student_imformation04 (char *machinenum,char *t1, char *t2, char *charused);//实验四学生信息上传封装
-void json_student_imformation05 (char *machinenum,char *dac1, char *adc1,char *dac2, char *adc2);//实验五学生信息上传封装
-void json_student_imformation07 (char *machinenum,char *sdmemory, char *sdtxt);//实验七学生信息上传封装
-void json_student_imformation06 (char *machinenum,char *student_name, char *student_number);//实验六学生信息上传封装
-void json_student_imformation08 (char *machinenum,char *speed_str,char *dir);//实验八学生信息上传封装
-void json_student_imformation09 (char *machinenum,char *student_name, char *student_number);////实验九学生信息上传封装
-void json_student_imformation10 (char *machinenum,char *student_name, char *student_number);//实验十学生信息上传封装
-void json_student_imformation_light (char *machinenum,char *luminance);//智慧路灯实验学生信息上传封装
-void json_student_imformation_agri (char *machinenum,char *temperature,char *humidity,char *luminance);//智慧农业实验学生信息上传封装
-void json_student_imformation_track (char *machinenum,char *longitude,char *latitude);//智慧物流学生信息上传封装
-void json_student_imformation_smoke (char *machinenum,char *smoke);//智慧烟感学生信息上传封装
+void json_student_imformation01 (char *machinenum,char *student_name, char *student_number);//?????????
+void json_student_imformation02 (char *machinenum,char *exph);//????????????????
+void json_student_imformation03 (char *machinenum,char *tab, char *ReadE2P,char *RES);//?????????????????
+void json_student_imformation04 (char *machinenum,char *t1, char *t2, char *charused);//?????????????????
+void json_student_imformation05 (char *machinenum,char *dac1, char *adc1,char *dac2, char *adc2);//?????????????????
+void json_student_imformation07 (char *machinenum,char *sdmemory, char *sdtxt);//?????????????????
+void json_student_imformation06 (char *machinenum,char *student_name, char *student_number);//?????????????????
+void json_student_imformation08 (char *machinenum,char *speed_str,char *dir);//????????????????
+void json_student_imformation09 (char *machinenum,char *student_name, char *student_number);////????????????????
+void json_student_imformation10 (char *machinenum,char *student_name, char *student_number);//????????????????
+void json_student_imformation_light (char *machinenum,char *luminance);//???·?????????????????
+void json_student_imformation_agri (char *machinenum,char *temperature,char *humidity,char *luminance);//????????????????????
+void json_student_imformation_track (char *machinenum,char *longitude,char *latitude);//???????????????????
+void json_student_imformation_smoke (char *machinenum,char *smoke);//??????????????????
 
 /*------------------------------timer---------------------------------*/
 extern volatile u16 tim3_count;
@@ -104,7 +106,7 @@ void TIM3_Init(u16 arr,u16 psc);
 void TIM2_Init(u16 arr,u16 psc);
 void TIM1_Init(u16 arr,u16 psc);
 void TIM4_Init(u16 arr,u16 psc);
-void test_check(void); //检查实验是否成功
+void test_check(void); //???????????
 
 extern u8 led_check;
 
@@ -127,9 +129,9 @@ extern u8 led_check;
 
 #define SIM_CNMI_ERR 0xf4
 
-#define SIM_KEY PAout(4) //SIM800C使能脚
+#define SIM_KEY PAout(4) //SIM800C????
 
-extern u8 dtbuf[50]; //打印缓存器
+extern u8 dtbuf[50]; //?????????
 extern u32 send_data_count;
 
 extern void GSM_ON_GPIO_Config(void);
@@ -147,12 +149,12 @@ void sim7600ce_connect(void);
 ///////////////////message_json////////////////////////////
 
 
-extern u8 SIM900A_GPRS_SEND_JSON_STRINGS(char *temp_data, u8 len);//用json格式发送字符串
-extern u8 SIM900A_GPRS_SEND_JSON_DATA_CRC(u8 *temp_data, u8 len);//用json格式发送数组
+extern u8 SIM900A_GPRS_SEND_JSON_STRINGS(char *temp_data, u8 len);//??json????????????
+extern u8 SIM900A_GPRS_SEND_JSON_DATA_CRC(u8 *temp_data, u8 len);//??json???????????
 void u8_int(char l,u8 *table_u,int *table_i);
-void json_test1(void);//json 输出测试1
-void json_test2(void);//json 输出测试2
-void json_test3(void);//json 输出测试3
+void json_test1(void);//json ???????1
+void json_test2(void);//json ???????2
+void json_test3(void);//json ???????3
 void init_4g (void);
 
 
