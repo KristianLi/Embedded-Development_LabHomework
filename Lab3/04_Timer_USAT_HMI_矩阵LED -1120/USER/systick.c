@@ -45,13 +45,7 @@ void delay_1ms(uint32_t count)
     while(0U != delay){
     }
 }
-void delay_lms(uint32_t count)
-{
-    delay = count;
 
-    while(0U != delay){
-    }
-}
 /*!
     \brief      delay decrement
     \param[in]  none
@@ -93,3 +87,5 @@ void nopdelay_ms(uint32_t t)
 		nopdelay_us(1000);
 	}
 }
+
+

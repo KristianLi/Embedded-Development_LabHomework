@@ -1,0 +1,4 @@
+/Users/apple/Desktop/C_creation/Embedded-Development_LabHomework/Lab1/cmake-build-debug/CMakeFiles/main2.dir
+/Users/apple/Desktop/C_creation/Embedded-Development_LabHomework/Lab1/cmake-build-debug/CMakeFiles/test2.dir
+/Users/apple/Desktop/C_creation/Embedded-Development_LabHomework/Lab1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/apple/Desktop/C_creation/Embedded-Development_LabHomework/Lab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
