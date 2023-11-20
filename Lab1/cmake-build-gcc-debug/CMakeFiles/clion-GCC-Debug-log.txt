@@ -1,4 +1,0 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -DCMAKE_C_COMPILER=/opt/homebrew/Cellar/gcc/13.2.0/bin/aarch64-apple-darwin23-gcc-13 -DCMAKE_CXX_COMPILER=/opt/homebrew/Cellar/gcc/13.2.0/bin/aarch64-apple-darwin23-g++-13 -G Ninja -S /Users/apple/Desktop/C_creation/Embedded-Development_LabHomework/Lab1 -B /Users/apple/Desktop/C_creation/Embedded-Development_LabHomework/Lab1/cmake-build-gcc-debug
--- Configuring done (0.1s)
--- Generating done (0.0s)
--- Build files have been written to: /Users/apple/Desktop/C_creation/Embedded-Development_LabHomework/Lab1/cmake-build-gcc-debug
