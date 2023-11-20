@@ -55,9 +55,15 @@ void TIMER3_IRQHandler(void)
 {
 		if (SET==timer_interrupt_flag_get(TIMER3,TIMER_INT_UP)) //检查指定的TIM中断发生与否:TIM 中断源 
 		{
-
-
-			
+			timer_interrupt_flag_clear(TIMER3, TIMER_INT_UP);
+			if (tim3_count <= 4)
+			{
+				tim3_count++;
+			}
+			else
+			{
+				tim3_count = 0;
+			}
 		}
 }
 
