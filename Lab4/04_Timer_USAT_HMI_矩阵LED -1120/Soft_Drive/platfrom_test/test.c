@@ -111,12 +111,11 @@ void test1(void){
             HC595_CS();
         }
     }
-    if(tim3_count==6)
-    {
+    if(tim3_count==6){
         for(i=0;i<7;i++)
         {
-            HC595_Send_Byte(row[i]);
-            HC595_Send_Byte(core[i]);
+            HC595_Send_Byte(row_clear[i]);
+            HC595_Send_Byte(cal_clear[i]);
             HC595_CS();
         }
     }
