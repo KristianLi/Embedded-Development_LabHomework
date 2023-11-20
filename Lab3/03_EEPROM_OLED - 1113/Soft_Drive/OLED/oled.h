@@ -12,17 +12,17 @@
 #define X_WIDTH 	   128
 #define Y_WIDTH 	   64	    	
 
-//-----------------OLEDÁ´ØÂè£ÂÆö‰πâ----------------  
+//-----------------OLED∂Àø⁄∂®“Â----------------  
 /*
 	OLED_CS:	  PD4
 	OLED_RES:		PD5
 	OLED_DC:		PB4
 */
 #define	OLED_CS(n)		(n ? gpio_bit_set(GPIOD, GPIO_PIN_4) : gpio_bit_reset(GPIOD, GPIO_PIN_4))
-#define	OLED_RST(n)		(n ? gpio_bit_set(GPIOD, GPIO_PIN_5) : gpio_bit_reset(GPIOD, GPIO_PIN_5))
+#define	OLED_RST(n)		(n ? gpio_bit_set(GPIOE, GPIO_PIN_0) : gpio_bit_reset(GPIOE, GPIO_PIN_0))
 #define	OLED_DC(n)		(n ? gpio_bit_set(GPIOB, GPIO_PIN_4) : gpio_bit_reset(GPIOB, GPIO_PIN_4))
 
-//OLEDÊéßÂà∂Áî®ÂáΩÊï∞
+//OLEDøÿ÷∆”√∫Ø ˝
 void OLED_Gpio_Init(void);
 void OLED_SPI_Send(uint8_t data);
 void OLED_Write_Cmd(uint8_t cmd);
