@@ -42,19 +42,46 @@ uint8_t core4[]    = {0xfe,0xfd,0xfb,0xf7,0xef,0xdf,0xbf,0x7f}; 				/*中字第四笔
 
 //系统初始化（systick、定时器、GD_XLL、HC595、DIWIN ）
 void system_init(void) {
-
-	
-	
-	
-	
-	
-
+    systick_config();
+    TIM3_Init(30000, 10000);
+    gd_XII_systeminit();
+    HC595_GPIO_Config();
+    diwen_init();
 }
 
 
 
 
 //实验一 LED写汉字
+void test1(void){
+    while (0x1A == uart5_rx_buffer[5])
+    {
+        delay_1ms(100);
+        while (0x01 == uart5_rx_buffer[8])
+        {
+            gd_eval_led_on(LED1);
+        }
+        while (0x00 == uart5_rx_buffer[5])
+        {
+            gd_eval_led_off(LED1);
+        }
+        
+        
+    }
+
+    while (0x11 == uart5_rx_buffer[5])
+    {
+        delay_1ms(100);
+    }
+    while (0x01 == uart5_rx_buffer[8])
+    {
+        gd_eval_led_on(LED2);
+    }
+    while (0x00 == uart5_rx_buffer[5])
+    {
+        gd_eval_led_off(LED2);
+    }
+}
 
 
 
