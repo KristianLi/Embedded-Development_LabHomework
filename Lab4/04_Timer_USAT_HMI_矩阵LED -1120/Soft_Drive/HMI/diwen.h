@@ -9,6 +9,7 @@
 #define DISABLE_INT()	              __set_PRIMASK(1)    //禁止全局中断
 
 extern uint8_t byUart5RecState;
+uint8_t uart5_rx_buffer[20];
 //#define Uart5Rec5A_Flag                       BIT_ADDR((u32)&byUart1RecState,0)//串口1数据接收到5A标志
 //#define Uart5RecStart_Flag                    BIT_ADDR((u32)&byUart1RecState,1)//串口1数据接收完整包头标志
 //#define Uart5RecEnd_Flag                      BIT_ADDR((u32)&byUart1RecState,2)//串口1接收完成标志

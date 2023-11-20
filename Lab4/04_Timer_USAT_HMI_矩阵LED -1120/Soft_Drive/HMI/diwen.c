@@ -26,7 +26,7 @@ static uint16_t USART_Tx_Count = 0;
 
 
 uint8_t rx_buffer[BUFFER_SIZE];
-extern uint8_t uart5_rx_buffer[20];
+uint8_t uart5_rx_buffer[20];
 uint16_t rrx_counter = 0, get_count = 0,rx_counter = 0;
 __IO uint16_t offset_rx = 0;
 

@@ -22,9 +22,7 @@ int main(void)
 system_init();
 
 	while(1){
-   
-
- 
+        test2();
 	};
 }
 
