@@ -1,6 +1,0 @@
---c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\..\..\..\GD32F4x_Firmware_Library\CMSIS\GD\GD32F4xx\Include -I ..\..\..\..\GD32F4x_Firmware_Library\GD32F4xx_standard_peripheral\Include -I ..\USER -I ..\..\..\Utilities -I ..\Soft_Drive\platformtest -I ..\..\..\..\GD32F4x_Firmware_Library\CMSIS -I ..\..\..\..\GD32F4x_Firmware_Library\XLL_4G
--I.\RTE\_Target_1
--ID:\Keil_V5\ARM\PACK\GigaDevice\GD32F4xx_DFP\3.0.3\Device\F4XX\Include
--ID:\Keil_V5\ARM\CMSIS\Include
--D__UVISION_VERSION="525" -DGD32F407
--o .\output\test.o --omf_browse .\output\test.crf --depend .\output\test.d "..\Soft_Drive\platformtest\test.c"
