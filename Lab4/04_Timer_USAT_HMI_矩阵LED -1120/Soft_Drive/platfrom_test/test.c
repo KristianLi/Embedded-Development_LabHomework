@@ -152,7 +152,7 @@ void led_play(void)
     {
         gd_eval_led_on(LED2);
     }
-    while (0x00 == uart5_rx_buffer[5])
+    while (0x00 == uart5_rx_buffer[8])
     {
         gd_eval_led_off(LED2);
     }
@@ -164,6 +164,91 @@ void led_play(void)
 void test2(void){
     led_play();
 }
-
+void lightLED(void) {
+    gd_eval_led_on(LED1);
+    delay_1ms(100);
+    gd_eval_led_on(LED2);
+    delay_1ms(100);
+    gd_eval_led_on(LED3);
+    delay_1ms(100);
+    gd_eval_led_on(LED4);
+    delay_1ms(100);
+    gd_eval_led_on(LED5);
+    delay_1ms(100);
+    gd_eval_led_on(LED6);
+    delay_1ms(100);
+    gd_eval_led_on(LED7);
+    delay_1ms(100);
+    gd_eval_led_on(LED8);
+    delay_1ms(100);
+}
+void extinguishLED(void){
+    gd_eval_led_off(LED1);
+    delay_1ms(100);
+    gd_eval_led_off(LED2);
+    delay_1ms(100);
+    gd_eval_led_off(LED3);
+    delay_1ms(100);
+    gd_eval_led_off(LED4);
+    delay_1ms(100);
+    gd_eval_led_off(LED5);
+    delay_1ms(100);
+    gd_eval_led_off(LED6);
+    delay_1ms(100);
+    gd_eval_led_off(LED7);
+    delay_1ms(100);
+    gd_eval_led_off(LED8);
+    delay_1ms(100);
+}
+void flashLED(void){
+    gd_eval_led_on(LED1);
+    delay_1ms(50);
+    gd_eval_led_off(LED1);
+    delay_1ms(50);
+    gd_eval_led_on(LED2);
+    delay_1ms(50);
+    gd_eval_led_off(LED2);
+    delay_1ms(50);
+    gd_eval_led_on(LED3);
+    delay_1ms(50);
+    gd_eval_led_off(LED3);
+    delay_1ms(50);
+    gd_eval_led_on(LED4);
+    delay_1ms(50);
+    gd_eval_led_off(LED4);
+    delay_1ms(50);
+    gd_eval_led_on(LED5);
+    delay_1ms(50);
+    gd_eval_led_off(LED5);
+    delay_1ms(50);
+    gd_eval_led_on(LED6);
+    delay_1ms(50);
+    gd_eval_led_off(LED6);
+    delay_1ms(50);
+    gd_eval_led_on(LED7);
+    delay_1ms(50);
+    gd_eval_led_off(LED7);
+    delay_1ms(50);
+    gd_eval_led_on(LED8);
+    delay_1ms(50);
+    gd_eval_led_off(LED8);
+    delay_1ms(50);
+}
+void test3()
+{
+    while (uart5_rx_buffer[5] == 0x1F) {
+        delay_1ms(100);
+        while (uart5_rx_buffer[8] == 0x01) {
+            lightLED();
+            delay_1ms(100);
+            lightLED();
+            delay_1ms(100);
+        }
+        while (uart5_rx_buffer[8] == 0x00) {
+            flashLED();
+            delay_1ms(50);
+        }
+    }
+}
 
 
