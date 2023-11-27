@@ -5,14 +5,21 @@
 #include "systick.h"
 #include "oled.h"
 #include "user.h"
-
-
+#include "diwen.h"
+volatile uint8_t motor_speed;
+volatile uint8_t mode_select;
+volatile uint8_t forward = 1;
+volatile uint8_t reverse = 0;
+volatile uint8_t stop = 2;
+volatile uint8_t motor_speed;
+float speed;
 //初始化 时钟、xll、电机gpio、oled、按键
 void system_init(void)
 {
-	systick_config();	//时钟
+		systick_config();	//时钟
     gd_XII_systeminit();	//XLL
     motor_gpio_config();	//电机GPIO
+	OLED_Gpio_Init(); // OLED?????????
     OLED_Init();	//OLED
     //按键初始化？
 }
@@ -132,6 +139,12 @@ void EXIT3_IRQHandler(void)
 //基础 电机转动
 void test1(void)
 {
+	OLED_ShowString(0, 0, "speed:");
+		motor8();
+}
+
+//进阶 按键控制电机转速、转向
+void test2(void){
     if(gpio_input_bit_get(DIP4_GPIO_PORT, DIP4_PIN) == RESET)
     {
         char str[4];
@@ -147,13 +160,11 @@ void test1(void)
     }
     else if(gpio_input_bit_get(DIP4_GPIO_PORT,DIP4_PIN)==SET)
     {
-        if(forward==mode_select)
-            motor_fanz(motor_speed);
-        else if (mode_select==reverse)
+          if(forward==mode_select)
+        motor_fanz(motor_speed);
+         else if (mode_select==reverse)
             motor_zhez(motor_speed);
-        else if(mode_select==stop)
-            motor_stop(motor_speed);
+else if(mode_select==stop)
+              motor_stop(motor_speed);
     }
 }
-
-//进阶 按键控制电机转速、转向

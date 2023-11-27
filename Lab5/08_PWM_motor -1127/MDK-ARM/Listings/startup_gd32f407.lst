@@ -642,12 +642,20 @@ ARM Macro Assembler    Page 10
               00000000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
-erwork --depend=.\output\startup_gd32f407.d -o.\output\startup_gd32f407.o -I.\R
-TE\_PWM -IC:\Keil_v5\ARM\PACK\GigaDevice\GD32F4xx_DFP\3.0.0\Device\F4XX\Include
- -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__MICROLIB SETA 1" --predefine="__
-UVISION_VERSION SETA 525" --predefine="GD32F407 SETA 1" --list=.\listings\start
-up_gd32f407.lst ..\..\..\..\GD32F4x_Firmware_Library\CMSIS\GD\GD32F4xx\Source\A
-RM\startup_gd32f407.s
+erwork --depend=.\output\startup_gd32f407.d -o.\output\startup_gd32f407.o -I"C:
+\Users\Administrator\Documents\Tencent Files\842969446\FileRecv\Ð¾Á¦Á¿-IOT_GD_G
+D32F407_demo\Xll-IOT_Demo_Suites\Projects\08_PWM_motor -1127\MDK-ARM\RTE" -IC:\
+Keil_v5\ARM\PACK\GigaDevice\GD32F4xx_DFP\3.0.0\Device\F4XX\Include -IC:\Keil_v5
+\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" 
+--predefine="__UVISION_VERSION SETA 517" --predefine="GD32F407 SETA 1" --list=.
+
+
+
+ARM Macro Assembler    Page 11 
+
+
+\listings\startup_gd32f407.lst ..\..\..\..\GD32F4x_Firmware_Library\CMSIS\GD\GD
+32F4xx\Source\ARM\startup_gd32f407.s
 
 
 
@@ -2059,4 +2067,4 @@ x\Source\ARM\startup_gd32f407.s
 x\Source\ARM\startup_gd32f407.s
 Comment: __main used once
 2 symbols
-444 symbols in table
+445 symbols in table
