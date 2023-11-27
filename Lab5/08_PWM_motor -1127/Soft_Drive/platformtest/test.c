@@ -10,6 +10,11 @@
 //初始化 时钟、xll、电机gpio、oled、按键
 void system_init(void)
 {
+	systick_config();	//时钟
+    gd_XII_systeminit();	//XLL
+    motor_gpio_config();	//电机GPIO
+    OLED_Init();	//OLED
+    //按键初始化？
 }
 
 
