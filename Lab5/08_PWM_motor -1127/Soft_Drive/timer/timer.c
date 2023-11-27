@@ -123,45 +123,45 @@ void timer_config(void)
 
 
 
-//¶¨Ê±Æ÷
+//ï¿½ï¿½Ê±ï¿½ï¿½
 
 u16 volatile tim3_count;
 u8 led_check=0;
-int test_flag = 0;//ÓÃÓÚ¼ì²éÊý×éÊÇ·ñÏàÍ¬£¬ÈôÏàÍ¬¾Í¸ø·þÎñÆ÷·¢ËÍÐÅÏ¢
+int test_flag = 0;//ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½Í¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 
 void TIM3_Init(u16 arr,u16 psc)
 {
  timer_parameter_struct timer_initpara;
 	
 	rcu_periph_clock_enable(RCU_TIMER3);
-	timer_deinit(TIMER3);//¸´Î»¶¨Ê±Æ÷
+	timer_deinit(TIMER3);//ï¿½ï¿½Î»ï¿½ï¿½Ê±ï¿½ï¿½
 	
-	//¶¨Ê±Æ÷TIM3³õÊ¼»¯
+	//ï¿½ï¿½Ê±ï¿½ï¿½TIM3ï¿½ï¿½Ê¼ï¿½ï¿½
 	 /* TIMER3 configuration */
-    timer_initpara.prescaler         = psc;//ÉèÖÃÓÃÀ´×÷ÎªTIMxÊ±ÖÓÆµÂÊ³ýÊýµÄÔ¤·ÖÆµÖµ
-    timer_initpara.alignedmode       = TIMER_COUNTER_EDGE;//¶ÔÆë
-    timer_initpara.counterdirection  = TIMER_COUNTER_UP;//TIMÏòÉÏ¼ÆÊýÄ£Ê½
-    timer_initpara.period            = arr;//ÉèÖÃÔÚÏÂÒ»¸ö¸üÐÂÊÂ¼þ×°Èë»î¶¯µÄ×Ô¶¯ÖØ×°ÔØ¼Ä´æÆ÷ÖÜÆÚµÄÖµ
-    timer_initpara.clockdivision     = TIMER_CKDIV_DIV1;//ÉèÖÃÊ±ÖÓ·Ö¸î:TDTS = Tck_tim
+    timer_initpara.prescaler         = psc;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªTIMxÊ±ï¿½ï¿½Æµï¿½Ê³ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ÆµÖµ
+    timer_initpara.alignedmode       = TIMER_COUNTER_EDGE;//ï¿½ï¿½ï¿½ï¿½
+    timer_initpara.counterdirection  = TIMER_COUNTER_UP;//TIMï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½Ä£Ê½
+    timer_initpara.period            = arr;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½×°ï¿½ï¿½î¶¯ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½×°ï¿½Ø¼Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½Öµ
+    timer_initpara.clockdivision     = TIMER_CKDIV_DIV1;//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ó·Ö¸ï¿½:TDTS = Tck_tim
 //    timer_initpara.repetitioncounter = 0;
     timer_init(TIMER3,&timer_initpara);
 //	  timer_interrupt_flag_clear(TIMER3,TIMER_INT_FLAG_UP); 
-	  timer_interrupt_enable(TIMER3,TIMER_INT_UP);//Ê¹ÄÜÖ¸¶¨µÄTIM3ÖÐ¶Ï,ÔÊÐí¸üÐÂÖÐ¶Ï
+	  timer_interrupt_enable(TIMER3,TIMER_INT_UP);//Ê¹ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½TIM3ï¿½Ð¶ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 	
-	//ÅäÖÃNVIC·Ö×é
+	//ï¿½ï¿½ï¿½ï¿½NVICï¿½ï¿½ï¿½ï¿½
 	nvic_irq_enable(TIMER3_IRQn,3,3);
 	
-	timer_enable(TIMER3);//Ê¹ÄÜTIM3
+	timer_enable(TIMER3);//Ê¹ï¿½ï¿½TIM3
 	
 }
 
 
-void TIMER3_IRQHandler(void)   //TIM3ÖÐ¶Ï
+void TIMER3_IRQHandler(void)   //TIM3ï¿½Ð¶ï¿½
 {
-	if (SET==timer_interrupt_flag_get(TIMER3,TIMER_INT_UP)) //¼ì²éÖ¸¶¨µÄTIMÖÐ¶Ï·¢ÉúÓë·ñ:TIM ÖÐ¶ÏÔ´ 
+	if (SET==timer_interrupt_flag_get(TIMER3,TIMER_INT_UP)) //ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½TIMï¿½Ð¶Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:TIM ï¿½Ð¶ï¿½Ô´ 
 	{
-			timer_interrupt_flag_clear(TIMER3,TIMER_INT_UP); //Çå³ýTIMxµÄÖÐ¶Ï´ý´¦ÀíÎ»:TIM ÖÐ¶ÏÔ´ 
-			if(NET_flag == 1 && tim3_count%40 == 0 )//Ã¿20sÖ÷¶¯·¢ËÍÒ»´Î
+			timer_interrupt_flag_clear(TIMER3,TIMER_INT_UP); //ï¿½ï¿½ï¿½TIMxï¿½ï¿½ï¿½Ð¶Ï´ï¿½ï¿½ï¿½ï¿½ï¿½Î»:TIM ï¿½Ð¶ï¿½Ô´ 
+			if(NET_flag == 1 && tim3_count%40 == 0 )//Ã¿20sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 			{
 				
 			//Uart0Printf("hello\r\n");
@@ -222,7 +222,7 @@ void motor_zhez(uint8_t speed)
 	gpio_bit_reset(GPIOC,GPIO_PIN_9);
 	delay_1ms(speed);
 }
-void motor_stop(void)
+void motor_stop(volatile uint8_t)
 {
 	gpio_bit_reset(GPIOC,GPIO_PIN_6);	
 	gpio_bit_reset(GPIOC,GPIO_PIN_7);
