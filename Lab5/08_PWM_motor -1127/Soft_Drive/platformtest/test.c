@@ -12,18 +12,6 @@ void system_init(void)
 {
 }
 
-void motor_gpio_config(void)
-{
-    rcu_periph_clock_enable(RCU_GPIOA);
-    gpio_mode_set(GPIOC, GPIO_MODE_OUTPUT, GPIO_PUPD_PULLUP, GPIO_PIN_6);
-    gpio_output_options_set(GPIOC, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_6);
-    gpio_mode_set(GPIOC, GPIO_MODE_OUTPUT, GPIO_PUPD_PULLUP, GPIO_PIN_7);
-    gpio_output_options_set(GPIOC, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_7);
-    gpio_mode_set(GPIOC, GPIO_MODE_OUTPUT, GPIO_PUPD_PULLUP, GPIO_PIN_8);
-    gpio_output_options_set(GPIOC, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_8);
-    gpio_mode_set(GPIOC, GPIO_MODE_OUTPUT, GPIO_PUPD_PULLUP, GPIO_PIN_9);
-    gpio_output_options_set(GPIOC, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_9);
-}
 
 void motor4Z(void)
 {
@@ -135,62 +123,6 @@ void EXIT3_IRQHandler(void)
     }
 }
 
-
-void motor_fanz1(uint8_t speed)
-{
-    gpio_bit_reset(GPIOC, GPIO_PIN_6);
-    gpio_bit_set(GPIOC, GPIO_PIN_7);
-    gpio_bit_set(GPIOC, GPIO_PIN_8);
-    gpio_bit_set(GPIOC, GPIO_PIN_9);
-    delay_1ms(speed);
-    gpio_bit_set(GPIOC, GPIO_PIN_6);
-    gpio_bit_reset(GPIOC, GPIO_PIN_7);
-    gpio_bit_set(GPIOC, GPIO_PIN_8);
-    gpio_bit_set(GPIOC, GPIO_PIN_9);
-    delay_1ms(speed);
-    gpio_bit_set(GPIOC, GPIO_PIN_6);
-    gpio_bit_set(GPIOC, GPIO_PIN_7);
-    gpio_bit_reset(GPIOC, GPIO_PIN_8);
-    gpio_bit_set(GPIOC, GPIO_PIN_9);
-    delay_1ms(speed);
-    gpio_bit_set(GPIOC, GPIO_PIN_6);
-    gpio_bit_set(GPIOC, GPIO_PIN_7);
-    gpio_bit_set(GPIOC, GPIO_PIN_8);
-    gpio_bit_reset(GPIOC, GPIO_PIN_9);
-    delay_1ms(speed);
-}
-
-void motor_zhez1(uint8_t speed)
-{
-    gpio_bit_set(GPIOC, GPIO_PIN_6);
-    gpio_bit_set(GPIOC, GPIO_PIN_7);
-    gpio_bit_set(GPIOC, GPIO_PIN_8);
-    gpio_bit_reset(GPIOC, GPIO_PIN_9);
-    delay_1ms(speed);
-    gpio_bit_set(GPIOC, GPIO_PIN_6);
-    gpio_bit_set(GPIOC, GPIO_PIN_7);
-    gpio_bit_reset(GPIOC, GPIO_PIN_8);
-    gpio_bit_set(GPIOC, GPIO_PIN_9);
-    delay_1ms(speed);
-    gpio_bit_set(GPIOC, GPIO_PIN_6);
-    gpio_bit_reset(GPIOC, GPIO_PIN_7);
-    gpio_bit_set(GPIOC, GPIO_PIN_8);
-    gpio_bit_set(GPIOC, GPIO_PIN_9);
-    delay_1ms(speed);
-    gpio_bit_reset(GPIOC, GPIO_PIN_6);
-    gpio_bit_set(GPIOC, GPIO_PIN_7);
-    gpio_bit_set(GPIOC, GPIO_PIN_8);
-    gpio_bit_set(GPIOC, GPIO_PIN_9);
-    delay_1ms(speed);
-}
-
-void motor_stop(void)
-{
-    gpio_bit_set(GPIOC, GPIO_PIN_6);
-    gpio_bit_set(GPIOC, GPIO_PIN_7);
-    gpio_bit_set(GPIOC, GPIO_PIN_8);
-    gpio_bit_set(GPIOC, GPIO_PIN_9);
-}
 
 //基础 电机转动
 void test1(void)
