@@ -127,7 +127,28 @@ void EXIT3_IRQHandler(void)
 //基础 电机转动
 void test1(void)
 {
+    if(gpio_input_bit_get(DIP4_GPIO_PORT, DIP4_PIN) == RESET)
+    {
+        char str[4];
+        speed=motor_speed;
+        sprintf(str, "%.2f", speed);
 
+        OLED_ShowString(0, 0, "speed:");
+        OLED_ShowString(50, 0, str);
+        sprintf(speed_str, "%.2f", speed);
+        if(mode_select == 0)
+            OLED_ShowString(0,2,"REVERSE");
+        else OLED_ShowString(0,2,"POSITIVE");
+    }
+    else if(gpio_input_bit_get(DIP4_GPIO_PORT,DIP4_PIN)==SET)
+    {
+        if(forward==mode_select)
+            motor_fanz(motor_speed);
+        else if (mode_select==reverse)
+            motor_zhez(motor_speed);
+        else if(mode_select==stop)
+            motor_stop(motor_speed);
+    }
 }
 
 //进阶 按键控制电机转速、转向
