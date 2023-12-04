@@ -1,0 +1,10 @@
+.\output\cjson.o: ..\..\..\..\GD32F4x_Firmware_Library\XLL_4G\cJSON.c
+.\output\cjson.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\string.h
+.\output\cjson.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\cjson.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\math.h
+.\output\cjson.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\stdlib.h
+.\output\cjson.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\limits.h
+.\output\cjson.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\ctype.h
+.\output\cjson.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\float.h
+.\output\cjson.o: ..\..\..\..\GD32F4x_Firmware_Library\XLL_4G\cJSON.h
+.\output\cjson.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\stddef.h

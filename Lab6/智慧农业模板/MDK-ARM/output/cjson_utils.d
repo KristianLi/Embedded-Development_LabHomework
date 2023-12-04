@@ -1,0 +1,11 @@
+.\output\cjson_utils.o: ..\..\..\..\GD32F4x_Firmware_Library\XLL_4G\cJSON_Utils.c
+.\output\cjson_utils.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\ctype.h
+.\output\cjson_utils.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\string.h
+.\output\cjson_utils.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\stdlib.h
+.\output\cjson_utils.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\cjson_utils.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\limits.h
+.\output\cjson_utils.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\math.h
+.\output\cjson_utils.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\float.h
+.\output\cjson_utils.o: ..\..\..\..\GD32F4x_Firmware_Library\XLL_4G\cJSON_Utils.h
+.\output\cjson_utils.o: ..\..\..\..\GD32F4x_Firmware_Library\XLL_4G\cJSON.h
+.\output\cjson_utils.o: C:\Keil_518\ARM\ARMCC\Bin\..\include\stddef.h
